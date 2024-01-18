@@ -34,6 +34,7 @@ const deleteTableRowFunction = (e)=>{
   dataArray.splice(match, 1)
   localStorage.setItem('dataArray', JSON.stringify(dataArray))
   dataId = dataId - 1;
+  location.reload()
   }
 const createTableFunction = ()=>{
             if (
