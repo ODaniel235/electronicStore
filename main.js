@@ -36,6 +36,21 @@ const deleteTableRowFunction = (e)=>{
   dataId = dataId - 1;
   location.reload()
   }
+
+const editFunction = (e)=>{
+  const match = e.parentNode.parentNode.getAttribute('id') - 1
+  console.log(match);
+  sellers.value = dataArray[match].seller
+  prices.value = dataArray[match].price
+  names.value = dataArray[match].name
+  createBtn.textContent = 'Update'
+  e.parentNode.parentNode.remove()
+  createBtn.addEventListener('click', ()=>{
+  dataArray.splice(match, 1)
+  localStorage.setItem('dataArray', JSON.stringify(dataArray))
+  createBtn.textContent = 'Create'
+  })
+}
 const createTableFunction = ()=>{
             if (
               names.value !== "" &&
@@ -66,7 +81,7 @@ const mainString = `
                     <td>${name}</td>
                     <td>${seller}</td>
                     <td>$${price}</td>
-                    <td><button id="editBtn" ><i  class="fa-solid fa-pen-to-square"></i></button></td>
+                    <td><button id="editBtn" onclick='editFunction(this)'><i  class="fa-solid fa-pen-to-square"></i></button></td>
                     <td><button id="deleteBtn" onclick='deleteTableRowFunction(this)'><i  class="fa-solid fa-trash"></i></button></td>
             </tr>
     `;
