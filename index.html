@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CRUD App</title>
+</head>
+<body>
+    <header>
+        <h1><i class="fa-solid fa-plug"></i> Electronic Store</h1>
+    </header>
+    <main>
+        <section class="inputSection">
+            <input id="seller" type="text" class="value" placeholder="Seller">
+            <input id="name" type="text" class="value" placeholder="Product Name">
+            <article class="div">
+                <input id="amount" type="number" placeholder="Amount" min="1" max="10">
+                <input type="number" id="price" placeholder="Price">
+            </article>
+        </section>
+        <section class="buttons">
+            <button class="create" id="createBtn">Create</button>
+            <button class="delete-all" id="deleteAllBtn">Delete All</button>
+        </section>
+        <section class="table">
+                <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Seller</th>
+                <th>Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr></tr>
+        </tbody>
+    </table>
+        </section>
+    </main>
+    <script src="https://kit.fontawesome.com/af25616316.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
